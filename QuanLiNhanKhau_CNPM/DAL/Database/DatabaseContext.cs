@@ -24,7 +24,7 @@ namespace QuanLiNhanKhau_CNPM.DAL.Database
         public DbSet<TieuSu> tieu_su { get; set; }
         public DbSet<User> user { get; set; }
         public DbSet<ToKhaiYTe> to_khai_y_te { get; set; }
-        public DbSet<TinhTrangCachLy> tinh_trang_cach_ly { get; set; }
+        public DbSet<ThongKeYTe> thong_ke_y_te { get; set; }
         
         /*
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

@@ -24,6 +24,8 @@ namespace QuanLiNhanKhau_CNPM.AutoMapper
             CreateMap<ThanhVienCuaHo, ThanhVienCuaHoDto>();
             CreateMap<TieuSu, TieuSuDto>();
             CreateMap<User, UserDto>();
+            CreateMap<ToKhaiYTe, ToKhaiYTeDto>();
+            CreateMap<ThongKeYTe, ThongKeYTeDto>();
 
             // Dto to Entity
             CreateMap<ChungMinhThuDto, ChungMinhThu>();
@@ -37,6 +39,8 @@ namespace QuanLiNhanKhau_CNPM.AutoMapper
             CreateMap<ThanhVienCuaHoDto, ThanhVienCuaHo>();
             CreateMap<TieuSuDto, TieuSu>();
             CreateMap<UserDto, User>();
+            CreateMap<ToKhaiYTeDto, ToKhaiYTe>();
+            CreateMap<ThongKeYTeDto, ThongKeYTe>();
 
         }
         
