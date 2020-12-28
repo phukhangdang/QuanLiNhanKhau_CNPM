@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using QuanLiNhanKhau_CNPM.DAL.Dtos;
+using QuanLiNhanKhau_CNPM.DAL.Entities;
+using QuanLiNhanKhau_CNPM.DAL.Repository.GenericRepository;
+using QuanLiNhanKhau_CNPM.DAL.Repository.UnitOfWork;
+using QuanLiNhanKhau_CNPM.Services.BaseService;
+
+namespace QuanLiNhanKhau_CNPM.Services.NhanKhauService
+{
+    public class NhanKhauService : BaseService<NhanKhau, NhanKhauDto>, INhanKhauService
+    {
+        public NhanKhauService(IUnitOfWork unitOfWork) : base(unitOfWork)
+        {
+        }
+        protected override IGenericRepository<NhanKhau> _reponsitory => _unitOfWork.NhanKhauRepository;
+    }
+}
