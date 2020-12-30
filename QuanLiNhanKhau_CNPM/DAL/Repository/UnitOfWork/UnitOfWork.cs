@@ -24,6 +24,7 @@ namespace QuanLiNhanKhau_CNPM.DAL.Repository.UnitOfWork
         public IGenericRepository<User> UserRepository { get; private set; }
         public IGenericRepository<ToKhaiYTe> ToKhaiYTeRepository { get; private set; }
         public IGenericRepository<ThongKeYTe> ThongKeYTeRepository { get; private set; }
+        public IGenericRepository<TiepXuc> TiepXucRepository { get; private set; }
 
         public UnitOfWork(DatabaseContext context)
         {
@@ -45,6 +46,7 @@ namespace QuanLiNhanKhau_CNPM.DAL.Repository.UnitOfWork
             UserRepository = new GenericRepository<User>(dbContext);
             ToKhaiYTeRepository = new GenericRepository<ToKhaiYTe>(dbContext);
             ThongKeYTeRepository = new GenericRepository<ThongKeYTe>(dbContext);
+            TiepXucRepository = new GenericRepository<TiepXuc>(dbContext);
         }
 
         public async Task SaveAsync()

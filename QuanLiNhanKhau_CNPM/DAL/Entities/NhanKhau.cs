@@ -47,5 +47,6 @@ namespace QuanLiNhanKhau_CNPM.DAL.Entities
         public IEnumerable<ThanhVienCuaHo> ThanhVienCuaHos { get; set; }
         public IEnumerable<TieuSu> TieuSus { get; set; }
         public IEnumerable<ToKhaiYTe> ToKhaiYTes { get; set; }
+        public IEnumerable<TiepXuc> TiepXucs { get; set; }
     }
 }

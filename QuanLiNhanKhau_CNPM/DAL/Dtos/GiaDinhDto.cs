@@ -8,7 +8,7 @@ namespace QuanLiNhanKhau_CNPM.DAL.Dtos
     public class GiaDinhDto
     {
         public int ID { get; set; }
-        public int IDNhanKhau { get; set; }
+        public int NhanKhauID { get; set; }
         public string HoTen { get; set; }
         public DateTime NamSinh { get; set; }
         public string GioiTinh { get; set; }

@@ -22,6 +22,7 @@ namespace QuanLiNhanKhau_CNPM.DAL.Repository.UnitOfWork
         IGenericRepository<User> UserRepository { get; }
         IGenericRepository<ToKhaiYTe> ToKhaiYTeRepository { get; }
         IGenericRepository<ThongKeYTe> ThongKeYTeRepository { get; }
+        IGenericRepository<TiepXuc> TiepXucRepository { get; }
         Task SaveAsync();
     }
 }

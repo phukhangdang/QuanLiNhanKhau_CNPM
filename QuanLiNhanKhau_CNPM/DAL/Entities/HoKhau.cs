@@ -9,7 +9,7 @@ namespace QuanLiNhanKhau_CNPM.DAL.Entities
     {
         public int ID { get; set; }
         public string MaHoKhau { get; set; }
-        public int IDChuHo { get; set; }
+        public int ChuHoID { get; set; }
         public string MaKhuVuc { get; set; }
         public string DiaChi { get; set; }
         public DateTime NgayLap { get; set; }

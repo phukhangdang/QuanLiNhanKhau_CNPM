@@ -20,7 +20,6 @@ namespace QuanLiNhanKhau_CNPM.DAL.Entities
         public DateTime ThoiGianKetThuc { get; set; }
         public bool KetQuaXetNghiem { get; set; }
         public string HinhThucTest { get; set; }
-        public IEnumerable<NhanKhau> TiepXuc { get; set; }
-
+        public string TiepXuc { get; set; }
     }
 }

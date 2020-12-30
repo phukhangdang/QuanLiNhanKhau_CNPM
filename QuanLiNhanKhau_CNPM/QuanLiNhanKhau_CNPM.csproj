@@ -17,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\LoginService\" />
     <Folder Include="Services\ThongKeService\" />
   </ItemGroup>
 

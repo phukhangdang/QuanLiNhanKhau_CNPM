@@ -8,7 +8,7 @@ namespace QuanLiNhanKhau_CNPM.DAL.Entities
     public class ChungMinhThu
     {
         public int ID { get; set; }
-        public int IDNhanKhau { get; set; }
+        public int NhanKhauID { get; set; }
         public string SoCMT { get; set; }
         public DateTime NgayCap { get; set; }
         public string NoiCap { get; set; }

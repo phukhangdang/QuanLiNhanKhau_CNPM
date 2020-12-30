@@ -12,7 +12,7 @@ namespace QuanLiNhanKhau_CNPM.Services.ToKhaiYTeService
 {
     public class ToKhaiYTeService : BaseService<ToKhaiYTe, ToKhaiYTeDto>, IToKhaiYTeService
     {
-        public ToKhaiYTeService(UnitOfWork unitOfWork) : base(unitOfWork)
+        public ToKhaiYTeService(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
         }
         protected override IGenericRepository<ToKhaiYTe> _reponsitory => _unitOfWork.ToKhaiYTeRepository;

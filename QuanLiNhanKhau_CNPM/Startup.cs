@@ -21,10 +21,12 @@ using QuanLiNhanKhau_CNPM.Services.DinhChinhService;
 using QuanLiNhanKhau_CNPM.Services.GiaDinhService;
 using QuanLiNhanKhau_CNPM.Services.HoKhauService;
 using QuanLiNhanKhau_CNPM.Services.KhaiTuService;
+using QuanLiNhanKhau_CNPM.Services.LoginService;
 using QuanLiNhanKhau_CNPM.Services.NhanKhauService;
 using QuanLiNhanKhau_CNPM.Services.TamTruService;
 using QuanLiNhanKhau_CNPM.Services.TamVangService;
 using QuanLiNhanKhau_CNPM.Services.ThanhVienCuaHoService;
+using QuanLiNhanKhau_CNPM.Services.TiepXucService;
 using QuanLiNhanKhau_CNPM.Services.TieuSuService;
 using QuanLiNhanKhau_CNPM.Services.TinhTrangCachLyService;
 using QuanLiNhanKhau_CNPM.Services.ToKhaiYTeService;
@@ -85,7 +87,20 @@ namespace QuanLiNhanKhau_CNPM
             services.AddScoped<ITieuSuService, TieuSuService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IToKhaiYTeService, ToKhaiYTeService>();
-            services.AddScoped<ITinhTrangCachLyService, ThongKeYTeService>();
+            services.AddScoped<IThongKeYTeService, ThongKeYTeService>();
+            services.AddScoped<ILoginService, LoginService>();
+            services.AddScoped<ITiepXucService, TiepXucService>();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllOrigins",
+                    builder =>
+                    {
+                        builder.AllowAnyHeader()
+                               .AllowAnyOrigin()
+                               .AllowAnyMethod();
+                    });
+            });
 
         }
 
@@ -97,6 +112,7 @@ namespace QuanLiNhanKhau_CNPM
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors("AllOrigins");
             app.UseHttpsRedirection();
 
             app.UseRouting();

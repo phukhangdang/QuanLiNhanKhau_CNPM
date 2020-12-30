@@ -47,7 +47,6 @@ namespace QuanLiNhanKhau_CNPM.DAL.Dtos
         public IEnumerable<ThanhVienCuaHoDto> ThanhVienCuaHos { get; set; }
         public IEnumerable<TieuSuDto> TieuSus { get; set; }
         public IEnumerable<ToKhaiYTeDto> ToKhaiYTes { get; set; }
-        public IEnumerable<TinhTrangCachLyDto> TinhTrangCachLys { get; set; }
-
+        public IEnumerable<TiepXucDto> TiepXucs { get; set; }
     }
 }

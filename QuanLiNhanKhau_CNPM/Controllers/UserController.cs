@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using QuanLiNhanKhau_CNPM.DAL.Dtos;
+using QuanLiNhanKhau_CNPM.Services.LoginService;
 using QuanLiNhanKhau_CNPM.Services.UserService;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -13,9 +14,11 @@ namespace QuanLiNhanKhau_CNPM.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
-        public UserController(IUserService userService)
+        private readonly ILoginService _loginService;
+        public UserController(IUserService userService, ILoginService loginService)
         {
             _userService = userService;
+            _loginService = loginService;
         }
 
         // GET: api/<UserController>
@@ -51,6 +54,11 @@ namespace QuanLiNhanKhau_CNPM.Controllers
         public async Task Delete(int id)
         {
             await _userService.DeleteAsync(id);
+        }
+        [Route("login"), HttpPut]
+        public async Task<UserDto> Login([FromBody] UserDto Dto)
+        {
+            return await _loginService.LoginAsync(Dto);
         }
     }
 }

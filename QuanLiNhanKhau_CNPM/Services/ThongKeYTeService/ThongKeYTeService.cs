@@ -12,7 +12,7 @@ namespace QuanLiNhanKhau_CNPM.Services.TinhTrangCachLyService
 {
     public class ThongKeYTeService : BaseService<ThongKeYTe, ThongKeYTeDto>, IThongKeYTeService
     {
-        public ThongKeYTeService(UnitOfWork unitOfWork) : base(unitOfWork)
+        public ThongKeYTeService(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
         }
         protected override IGenericRepository<ThongKeYTe> _reponsitory => _unitOfWork.ThongKeYTeRepository;
