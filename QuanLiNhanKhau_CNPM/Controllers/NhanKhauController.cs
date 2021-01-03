@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using QuanLiNhanKhau_CNPM.DAL.Dtos;
 using QuanLiNhanKhau_CNPM.Services.NhanKhauService;
+using QuanLiNhanKhau_CNPM.Services.ThongKeService;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,9 +16,11 @@ namespace QuanLiNhanKhau_CNPM.Controllers
     public class NhanKhauController : ControllerBase
     {
         private readonly INhanKhauService _nhanKhauService;
-        public NhanKhauController(INhanKhauService nhanKhauService)
+        private readonly IThongKeService _thongKeService;
+        public NhanKhauController(INhanKhauService nhanKhauService, IThongKeService thongKeService)
         {
             _nhanKhauService = nhanKhauService;
+            _thongKeService = thongKeService;
         }
 
         // GET: api/<UserController>
@@ -53,6 +56,16 @@ namespace QuanLiNhanKhau_CNPM.Controllers
         public async Task Delete(int id)
         {
             await _nhanKhauService.DeleteAsync(id);
+        }
+        [Route("thongke/dakhaibao"), HttpGet]
+        public async Task<IEnumerable<NhanKhauDto>> GetDaKhaiBao()
+        {
+            return await _thongKeService.GetDaKhaiBao();
+        }
+        [Route("thongke/chuakhaibao"), HttpGet]
+        public async Task<IEnumerable<NhanKhauDto>> GetChuaKhaiBao()
+        {
+            return await _thongKeService.GetChuaKhaiBao();
         }
     }
 }

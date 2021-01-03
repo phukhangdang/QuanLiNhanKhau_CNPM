@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using QuanLiNhanKhau_CNPM.DAL.Dtos;
 using QuanLiNhanKhau_CNPM.Services.LoginService;
+using QuanLiNhanKhau_CNPM.Services.ThongKeService;
 using QuanLiNhanKhau_CNPM.Services.UserService;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -15,10 +16,12 @@ namespace QuanLiNhanKhau_CNPM.Controllers
     {
         private readonly IUserService _userService;
         private readonly ILoginService _loginService;
-        public UserController(IUserService userService, ILoginService loginService)
+        private readonly IThongKeService _thongKeService;
+        public UserController(IUserService userService, ILoginService loginService, IThongKeService thongKeService)
         {
             _userService = userService;
             _loginService = loginService;
+            _thongKeService = thongKeService;
         }
 
         // GET: api/<UserController>

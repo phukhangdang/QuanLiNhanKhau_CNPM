@@ -3,7 +3,6 @@ using QuanLiNhanKhau_CNPM.DAL.Repository.GenericRepository;
 using QuanLiNhanKhau_CNPM.DAL.Repository.UnitOfWork;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace QuanLiNhanKhau_CNPM.Services.BaseService

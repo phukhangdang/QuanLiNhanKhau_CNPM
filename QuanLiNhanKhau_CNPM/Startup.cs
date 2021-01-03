@@ -26,6 +26,7 @@ using QuanLiNhanKhau_CNPM.Services.NhanKhauService;
 using QuanLiNhanKhau_CNPM.Services.TamTruService;
 using QuanLiNhanKhau_CNPM.Services.TamVangService;
 using QuanLiNhanKhau_CNPM.Services.ThanhVienCuaHoService;
+using QuanLiNhanKhau_CNPM.Services.ThongKeService;
 using QuanLiNhanKhau_CNPM.Services.TiepXucService;
 using QuanLiNhanKhau_CNPM.Services.TieuSuService;
 using QuanLiNhanKhau_CNPM.Services.TinhTrangCachLyService;
@@ -90,6 +91,7 @@ namespace QuanLiNhanKhau_CNPM
             services.AddScoped<IThongKeYTeService, ThongKeYTeService>();
             services.AddScoped<ILoginService, LoginService>();
             services.AddScoped<ITiepXucService, TiepXucService>();
+            services.AddScoped<IThongKeService, ThongKeService>();
 
             services.AddCors(options =>
             {
