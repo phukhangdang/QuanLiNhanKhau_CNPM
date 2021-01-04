@@ -11,7 +11,7 @@ namespace QuanLiNhanKhau_CNPM.DAL.Repository.GenericRepository
         Task<TEntity> GetByID(object id);
         public void Create(TEntity entity);
         public void Update(TEntity entityToUpdate);
-        public void DeleteByID(object id);
+        public void DeleteByID(TEntity entityToDelete);
 
     }
 }

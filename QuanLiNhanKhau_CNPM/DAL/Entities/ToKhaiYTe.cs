@@ -21,5 +21,6 @@ namespace QuanLiNhanKhau_CNPM.DAL.Entities
         public bool KetQuaXetNghiem { get; set; }
         public string HinhThucTest { get; set; }
         public string TiepXuc { get; set; }
+        public DateTime DateRegistered { get; set; }
     }
 }

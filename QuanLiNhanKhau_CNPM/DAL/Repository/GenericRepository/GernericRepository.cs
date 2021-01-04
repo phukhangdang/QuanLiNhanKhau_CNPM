@@ -21,9 +21,8 @@ namespace QuanLiNhanKhau_CNPM.DAL.Repository.GenericRepository
             dbSet.Add(entity);
         }
 
-        public virtual void DeleteByID(object id)
+        public virtual void DeleteByID(TEntity entityToDelete)
         {
-            TEntity entityToDelete = dbSet.Find(id);
             dbSet.Remove(entityToDelete);
         }
 

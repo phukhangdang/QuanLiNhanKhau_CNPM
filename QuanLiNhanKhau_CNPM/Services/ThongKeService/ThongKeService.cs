@@ -19,34 +19,33 @@ namespace QuanLiNhanKhau_CNPM.Services.ThongKeService
         }
         public async Task<IEnumerable<NhanKhauDto>> GetDaKhaiBao()
         {
-            List<NhanKhau> Results = new List<NhanKhau>();
+            List<NhanKhau> Temp = new List<NhanKhau>();
             IEnumerable<NhanKhau> NhanKhaus = await _unitOfWork.NhanKhauRepository.Get(-1, 0);
             IEnumerable<ToKhaiYTe> ToKhaiYTes = await _unitOfWork.ToKhaiYTeRepository.Get(-1, 0);
             foreach (var toKhai in ToKhaiYTes)
             {
                 foreach (var nhanKhau in NhanKhaus)
                 {
-                    if (toKhai.NhanKhauID == nhanKhau.ID) Results.Add(nhanKhau);
+                    if (toKhai.NhanKhauID == nhanKhau.ID) Temp.Add(nhanKhau);
                 }
             }
-            return EntityToDto(Results);
+            IEnumerable<NhanKhau> except = NhanKhaus.Except<NhanKhau>(Temp);
+            return EntityToDto(NhanKhaus.Except<NhanKhau>(except));
         }
 
         public async Task<IEnumerable<NhanKhauDto>> GetChuaKhaiBao()
         {
-            List<NhanKhau> Results = new List<NhanKhau>();
-            List<NhanKhau> Final_Results = new List<NhanKhau>();
+            List<NhanKhau> Temp = new List<NhanKhau>();
             IEnumerable<NhanKhau> NhanKhaus = await _unitOfWork.NhanKhauRepository.Get(-1, 0);
             IEnumerable<ToKhaiYTe> ToKhaiYTes = await _unitOfWork.ToKhaiYTeRepository.Get(-1, 0);
             foreach (var toKhai in ToKhaiYTes)
             {
                 foreach (var nhanKhau in NhanKhaus)
                 {
-                    if (toKhai.NhanKhauID == nhanKhau.ID) Results.Add(nhanKhau);
+                    if (toKhai.NhanKhauID == nhanKhau.ID) Temp.Add(nhanKhau);
                 }
             }
-            IEnumerable<NhanKhau> except = NhanKhaus.Except<NhanKhau>(Results);
-            return EntityToDto(except);
+            return EntityToDto(NhanKhaus.Except<NhanKhau>(Temp));
 
         }
         protected List<NhanKhauDto> EntityToDto(List<NhanKhau> entities)

@@ -12,5 +12,6 @@ namespace QuanLiNhanKhau_CNPM.Services.ToKhaiYTeService
 {
     public interface IToKhaiYTeService : IBaseService<ToKhaiYTe, ToKhaiYTeDto>
     {
+        public Task<ToKhaiYTeDto> FindByNhanKhauID(int nhanKhauID);
     }
 }

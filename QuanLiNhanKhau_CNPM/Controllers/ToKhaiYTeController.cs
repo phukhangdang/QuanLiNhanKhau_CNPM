@@ -54,5 +54,12 @@ namespace QuanLiNhanKhau_CNPM.Controllers
         {
             await _toKhaiYTeService.DeleteAsync(id);
         }
+        
+        [Route("nhankhau"), HttpGet]
+        public async Task<ToKhaiYTeDto> GetByNhanKhauID(int id)
+        {
+            return await _toKhaiYTeService.FindByNhanKhauID(id);
+        }
+        
     }
 }

@@ -16,5 +16,15 @@ namespace QuanLiNhanKhau_CNPM.Services.ToKhaiYTeService
         {
         }
         protected override IGenericRepository<ToKhaiYTe> _reponsitory => _unitOfWork.ToKhaiYTeRepository;
+
+        public async Task<ToKhaiYTeDto> FindByNhanKhauID(int nhanKhauID)
+        {
+            IEnumerable<ToKhaiYTe> toKhaiYTes = await _reponsitory.Get(-1, 0);
+            foreach (var toKhaiYTe in toKhaiYTes)
+            {
+                if (toKhaiYTe.NhanKhauID == nhanKhauID) return EntityToDto(toKhaiYTe);
+            }
+            return null;
+        }
     }
 }
