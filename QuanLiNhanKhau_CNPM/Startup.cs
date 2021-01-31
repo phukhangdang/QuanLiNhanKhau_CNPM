@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,19 +16,10 @@ using Microsoft.OpenApi.Models;
 using QuanLiNhanKhau_CNPM.AutoMapper;
 using QuanLiNhanKhau_CNPM.DAL.Database;
 using QuanLiNhanKhau_CNPM.DAL.Repository.UnitOfWork;
-using QuanLiNhanKhau_CNPM.Services.ChungMinhThuService;
-using QuanLiNhanKhau_CNPM.Services.DinhChinhService;
-using QuanLiNhanKhau_CNPM.Services.GiaDinhService;
-using QuanLiNhanKhau_CNPM.Services.HoKhauService;
-using QuanLiNhanKhau_CNPM.Services.KhaiTuService;
 using QuanLiNhanKhau_CNPM.Services.LoginService;
 using QuanLiNhanKhau_CNPM.Services.NhanKhauService;
-using QuanLiNhanKhau_CNPM.Services.TamTruService;
-using QuanLiNhanKhau_CNPM.Services.TamVangService;
-using QuanLiNhanKhau_CNPM.Services.ThanhVienCuaHoService;
 using QuanLiNhanKhau_CNPM.Services.ThongKeService;
 using QuanLiNhanKhau_CNPM.Services.TiepXucService;
-using QuanLiNhanKhau_CNPM.Services.TieuSuService;
 using QuanLiNhanKhau_CNPM.Services.TinhTrangCachLyService;
 using QuanLiNhanKhau_CNPM.Services.ToKhaiYTeService;
 using QuanLiNhanKhau_CNPM.Services.UserService;
@@ -62,8 +53,8 @@ namespace QuanLiNhanKhau_CNPM
                 c.SwaggerDoc("project", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "Project I",
-                    Description = "SOICT",
+                    Title = "Quản lí y tế",
+                    Description = "Nhóm 06",
                     Contact = new OpenApiContact()
                     {
                         Name = "Dang Phu Khang",
@@ -76,16 +67,7 @@ namespace QuanLiNhanKhau_CNPM
                 Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddScoped<IChungMinhThuService, ChungMinhThuService>();
-            services.AddScoped<IDinhChinhService, DinhChinhService>();
-            services.AddScoped<IGiaDinhService, GiaDinhService>();
-            services.AddScoped<IHoKhauService, HoKhauService>();
-            services.AddScoped<IKhaiTuService, KhaiTuService>();
             services.AddScoped<INhanKhauService, NhanKhauService>();
-            services.AddScoped<ITamTruService, TamTruService>();
-            services.AddScoped<ITamVangService, TamVangService>();
-            services.AddScoped<IThanhVienCuaHoService, ThanhVienCuaHoService>();
-            services.AddScoped<ITieuSuService, TieuSuService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IToKhaiYTeService, ToKhaiYTeService>();
             services.AddScoped<IThongKeYTeService, ThongKeYTeService>();
@@ -125,7 +107,7 @@ namespace QuanLiNhanKhau_CNPM
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-            });
+            });  
 
             app.UseSwagger();
             app.UseSwaggerUI(c =>

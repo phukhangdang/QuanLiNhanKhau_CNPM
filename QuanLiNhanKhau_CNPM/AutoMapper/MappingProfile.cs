@@ -13,34 +13,18 @@ namespace QuanLiNhanKhau_CNPM.AutoMapper
         public MappingProfile()
         {
             // Entity to Dto
-            CreateMap<ChungMinhThu, ChungMinhThuDto>();
-            CreateMap<DinhChinh, DinhChinhDto>();
-            CreateMap<GiaDinh, GiaDinhDto>();
-            CreateMap<HoKhau, HoKhauDto>();
-            CreateMap<KhaiTu, KhaiTuDto>();
             CreateMap<NhanKhau, NhanKhauDto>();
-            CreateMap<TamTru, TamTruDto>();
-            CreateMap<TamVang, TamVangDto>();
-            CreateMap<ThanhVienCuaHo, ThanhVienCuaHoDto>();
-            CreateMap<TieuSu, TieuSuDto>();
             CreateMap<User, UserDto>();
             CreateMap<ToKhaiYTe, ToKhaiYTeDto>();
             CreateMap<ThongKeYTe, ThongKeYTeDto>();
+            CreateMap<TiepXuc, TiepXucDto>();
 
             // Dto to Entity
-            CreateMap<ChungMinhThuDto, ChungMinhThu>();
-            CreateMap<DinhChinhDto, DinhChinh>();
-            CreateMap<GiaDinhDto, GiaDinh>();
-            CreateMap<HoKhauDto, HoKhau>();
-            CreateMap<KhaiTuDto, KhaiTu>();
             CreateMap<NhanKhauDto, NhanKhau>();
-            CreateMap<TamTruDto, TamTru>();
-            CreateMap<TamVangDto, TamVang>();
-            CreateMap<ThanhVienCuaHoDto, ThanhVienCuaHo>();
-            CreateMap<TieuSuDto, TieuSu>();
             CreateMap<UserDto, User>();
             CreateMap<ToKhaiYTeDto, ToKhaiYTe>();
             CreateMap<ThongKeYTeDto, ThongKeYTe>();
+            CreateMap<TiepXucDto, TiepXuc>();
 
         }
         

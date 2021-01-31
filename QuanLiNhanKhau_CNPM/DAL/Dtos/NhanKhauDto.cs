@@ -39,13 +39,6 @@ namespace QuanLiNhanKhau_CNPM.DAL.Dtos
         public int IDNguoiXoa { get; set; }
         public string LyDoXoa { get; set; }
         public string GhiChu { get; set; }
-        public IEnumerable<ChungMinhThuDto> ChungMinhThus { get; set; }
-        public IEnumerable<GiaDinhDto> GiaDinhs { get; set; }
-        public IEnumerable<TamTruDto> TamTrus { get; set; }
-        public IEnumerable<TamVangDto> TamVangs { get; set; }
-        public IEnumerable<KhaiTuDto> KhaiTus { get; set; }
-        public IEnumerable<ThanhVienCuaHoDto> ThanhVienCuaHos { get; set; }
-        public IEnumerable<TieuSuDto> TieuSus { get; set; }
         public IEnumerable<ToKhaiYTeDto> ToKhaiYTes { get; set; }
         public IEnumerable<TiepXucDto> TiepXucs { get; set; }
     }
